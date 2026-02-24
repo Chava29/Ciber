@@ -20,7 +20,6 @@ public class F_Cuadratica {
         // Caso especial: si a = 0, ya no es cuadrática
         if (Math.abs(a) < EPS) {
             resolverLineal(b, c, EPS);
-            sc.close();
             return;
         }
 
@@ -39,7 +38,6 @@ public class F_Cuadratica {
             System.out.printf("x2 = %.6f%n", x2);
 
         } else if (Math.abs(discriminante) <= EPS) {
-            // Una solución real doble
             double x = (-b) / (2 * a);
 
             System.out.println("Resultado: Una solución real (raíz doble).");
@@ -53,7 +51,7 @@ public class F_Cuadratica {
         sc.close();
     }
 
-    // Lee un double con validación (no deja que el programa truene si meten texto)
+    // Lee un double con validación, no deja que el programa truene si meten texto
     private static double leerDouble(Scanner sc, String mensaje) {
         while (true) {
             System.out.print(mensaje);
